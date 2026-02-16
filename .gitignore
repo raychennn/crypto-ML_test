@@ -6,7 +6,8 @@ data/models/
 data/images/
 data/cache/
 data/logs/
-data/references/
+data/references/*
+!data/references/references.json
 data/scan_results.db
 data/__pycache__/
 

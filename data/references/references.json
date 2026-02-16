@@ -1,0 +1,117 @@
+{
+  "references": [
+    {
+      "id": "AUCTION_1h_perfect_trend",
+      "symbol": "AUCTIONUSDT",
+      "timeframe": "1h",
+      "start_ts": 1723870800,
+      "end_ts": 1724083200,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:18.203765+00:00",
+      "active": true
+    },
+    {
+      "id": "POL_2h_perfect_trend",
+      "symbol": "POLUSDT",
+      "timeframe": "2h",
+      "start_ts": 1767276000,
+      "end_ts": 1767873600,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:18.442848+00:00",
+      "active": true
+    },
+    {
+      "id": "BDXN_30m_perfect_trend",
+      "symbol": "BDXNUSDT",
+      "timeframe": "30m",
+      "start_ts": 1768388400,
+      "end_ts": 1768516200,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:18.651447+00:00",
+      "active": true
+    },
+    {
+      "id": "ADA_1h_perfect_trend",
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "start_ts": 1730851200,
+      "end_ts": 1731186000,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:18.880927+00:00",
+      "active": true
+    },
+    {
+      "id": "DOGE_1h_perfect_trend",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "start_ts": 1757242800,
+      "end_ts": 1757624400,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:19.097699+00:00",
+      "active": true
+    },
+    {
+      "id": "PUMP_30m_perfect_trend",
+      "symbol": "PUMPUSDT",
+      "timeframe": "30m",
+      "start_ts": 1767128400,
+      "end_ts": 1767265200,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:19.359893+00:00",
+      "active": true
+    },
+    {
+      "id": "SOON_1h_perfect_trend",
+      "symbol": "SOONUSDT",
+      "timeframe": "1h",
+      "start_ts": 1754395200,
+      "end_ts": 1754654400,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:19.576054+00:00",
+      "active": true
+    },
+    {
+      "id": "ARC_1h_perfect_trend",
+      "symbol": "ARCUSDT",
+      "timeframe": "1h",
+      "start_ts": 1761868800,
+      "end_ts": 1762142400,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:19.773083+00:00",
+      "active": true
+    },
+    {
+      "id": "ARC_30m_perfect_trend",
+      "symbol": "ARCUSDT",
+      "timeframe": "30m",
+      "start_ts": 1768780800,
+      "end_ts": 1768883400,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:19.976692+00:00",
+      "active": true
+    },
+    {
+      "id": "DEEP_1h_perfect_trend",
+      "symbol": "DEEPUSDT",
+      "timeframe": "1h",
+      "start_ts": 1761868800,
+      "end_ts": 1762142400,
+      "label": "perfect_trend",
+      "description": "classic consolidation -> strong trend pattern(without downswing)",
+      "created_at": "2026-02-14T15:07:20.151283+00:00",
+      "active": true
+    }
+  ],
+  "count": 10,
+  "active_count": 10,
+  "updated_at": "2026-02-14T15:07:20.151336+00:00"
+}

@@ -8,7 +8,10 @@ data/models/
 data/images/
 data/cache/
 data/logs/
-data/references/
+# Keep references.json for seeding, ignore the rest
+!data/references/references.json
+data/references/*.png
+data/references/*.jpg
 data/scan_results.db
 *.egg-info/
 .DS_Store
