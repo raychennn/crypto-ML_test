@@ -1,6 +1,14 @@
-# ===== Data (too large, regenerated on server) =====
-# 資料目錄（太大，伺服器上會自動重新產生）
-data/
+# ===== Data (generated files, too large for git) =====
+# 資料目錄中的生成檔案（太大，伺服器上會自動重新產生）
+# Keep Python source files (data/*.py), ignore generated data
+data/parquet/
+data/models/
+data/images/
+data/cache/
+data/logs/
+data/references/
+data/scan_results.db
+data/__pycache__/
 
 # ===== Python =====
 .venv/
