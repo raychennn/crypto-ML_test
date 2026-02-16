@@ -62,30 +62,32 @@ class ScanScheduler:
 
     def _initial_data_check(self):
         """
-        On first start, check if any Parquet data exists.
-        If not, trigger an initial download for all timeframes.
+        On first start, check each timeframe for local data.
+        Download any timeframes that are missing or have very few symbols.
         """
         if not self.data_manager or not self.symbol_manager:
             return
 
         try:
-            has_data = False
+            min_symbols = 50  # consider a timeframe "populated" if it has 50+ symbols
+            missing_tfs = []
             for tf in self.config.scan_timeframes:
                 symbols = self.data_manager.list_symbols_for_timeframe(tf)
-                if symbols:
-                    has_data = True
-                    logger.info(f"[startup] {tf}: {len(symbols)} symbols found locally")
+                count = len(symbols) if symbols else 0
+                if count >= min_symbols:
+                    logger.info(f"[startup] {tf}: {count} symbols found locally (OK)")
                 else:
-                    logger.info(f"[startup] {tf}: no local data")
+                    logger.info(f"[startup] {tf}: {count} symbols found locally (need download)")
+                    missing_tfs.append(tf)
 
-            if has_data:
-                logger.info("[startup] Local data exists, skipping initial download")
+            if not missing_tfs:
+                logger.info("[startup] All timeframes have sufficient data, skipping download")
                 return
 
-            logger.info("[startup] No local data found — starting initial download...")
+            logger.info(f"[startup] Downloading data for timeframes: {missing_tfs}")
             self.notifier.send_message(
-                "<b>First Start</b>\n"
-                "No local data found. Starting initial data download...\n"
+                "<b>Initial Download</b>\n"
+                f"Downloading data for: {', '.join(missing_tfs)}\n"
                 "This may take a while."
             )
 
@@ -96,15 +98,15 @@ class ScanScheduler:
 
             logger.info(f"[startup] Downloading data for {len(symbols)} symbols...")
 
-            for tf in self.config.scan_timeframes:
+            for tf in missing_tfs:
                 updated = self.orchestrator.update_data(tf)
                 logger.info(f"[startup] {tf}: downloaded data for {updated} symbols")
                 if self._stop_event.is_set():
                     break
 
             self.notifier.send_message(
-                "<b>Initial Download Complete</b>\n"
-                f"Downloaded data for {len(self.config.scan_timeframes)} timeframes."
+                "<b>Download Complete</b>\n"
+                f"Downloaded data for {len(missing_tfs)} timeframe(s): {', '.join(missing_tfs)}"
             )
         except Exception as e:
             logger.error(f"[startup] Initial data check failed: {e}")
