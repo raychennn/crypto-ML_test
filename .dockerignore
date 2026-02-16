@@ -3,7 +3,13 @@ __pycache__/
 *.pyc
 .git/
 .gitignore
-data/
+data/parquet/
+data/models/
+data/images/
+data/cache/
+data/logs/
+data/references/
+data/scan_results.db
 *.egg-info/
 .DS_Store
 *.swp
