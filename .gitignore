@@ -1,0 +1,42 @@
+# ===== Data (too large, regenerated on server) =====
+# 資料目錄（太大，伺服器上會自動重新產生）
+data/
+
+# ===== Python =====
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ===== IDE (personal settings, don't share) =====
+# IDE 設定（個人設定，不需分享）
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Secrets (never commit) =====
+# 機密資料（絕對不要提交）
+.env
+*.env
+.env.*
+
+# ===== Logs =====
+*.log
+
+# ===== Test artifacts =====
+.coverage
+htmlcov/
+
+# ===== Claude Code =====
+.claude/
