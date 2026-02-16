@@ -14,11 +14,10 @@ RUN pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create data directory structure and seed references
-# The persistent volume mounts at /data — if it already has references.json,
-# it takes precedence. This only seeds on first deploy.
-RUN mkdir -p /data/references /data/parquet /data/models /data/images /data/cache /data/logs
-COPY data/references/references.json /data/references/references.json
+# Entrypoint seeds references.json and creates directories at runtime
+# (persistent volume mounts at /data override build-time files)
+RUN chmod +x /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
 
 # Environment variables
 ENV DATA_ROOT=/data

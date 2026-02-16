@@ -186,9 +186,13 @@ class ScanOrchestrator:
             return 0
 
         try:
-            symbols = self.data_manager.list_symbols_for_timeframe(timeframe)
-            if not symbols and self.symbol_manager:
-                symbols = self.symbol_manager.get_active_symbols()
+            existing = set(self.data_manager.list_symbols_for_timeframe(timeframe) or [])
+            if self.symbol_manager:
+                all_symbols = self.symbol_manager.get_active_symbols()
+                # Merge: existing symbols + any new active symbols
+                symbols = list(all_symbols) if all_symbols else list(existing)
+            else:
+                symbols = list(existing)
         except Exception:
             return 0
 
